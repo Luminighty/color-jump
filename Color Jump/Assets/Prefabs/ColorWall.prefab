@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5265910453114032198}
   - component: {fileID: 5265910453114032197}
   - component: {fileID: 5265910453114032196}
-  - component: {fileID: 5265910453114032195}
+  - component: {fileID: 5979385042809583326}
   m_Layer: 0
   m_Name: ColorWall
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5265910453114032194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.84, y: -1.69, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   fullSprite: {fileID: 21300000, guid: b98e2ee76faf6ee4387ace9cc3cc256d, type: 3}
   emptySprite: {fileID: 21300000, guid: d1cec6f29bef88940a2693d60ab362d2, type: 3}
   renderer: {fileID: 5265910453114032197}
---- !u!61 &5265910453114032195
+--- !u!61 &5979385042809583326
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0

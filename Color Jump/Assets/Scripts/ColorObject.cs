@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ColorObject : MonoBehaviour
 {
-	
-	public int color;
 
+	public int color;
+	protected bool isSameColor {get {return (colorSwitcher == null) ? false : color == colorSwitcher.CurrentColor;}}
 	private new Collider2D collider;
 	private static ColorSwitcher colorSwitcher;
 
@@ -26,6 +26,14 @@ public class ColorObject : MonoBehaviour
 			colorSwitcher.onColorSwitch += OnColorSwitch;
 			renderer.color = colorSwitcher.Colors[color];
 		}
+
+		if(collider.GetType() == typeof(BoxCollider2D)) {
+			BoxCollider2D box = collider as BoxCollider2D;
+			if(box.autoTiling) {
+				box.autoTiling = false;
+				box.size = renderer.size;
+			}
+		}
 	}
 
 
@@ -33,6 +41,11 @@ public class ColorObject : MonoBehaviour
 		if(newColor == color) {
 			renderer.sprite = fullSprite;
 			collider.enabled = true;
+			BoxCollider2D box = collider as BoxCollider2D;
+			Collider2D[] cols = Physics2D.OverlapBoxAll(transform.position, box.size, 0f);
+			foreach(Collider2D c in cols)
+				if(c.tag == "Player")
+					c.GetComponent<Player>().Respawn();
 		} else {
 			renderer.sprite = emptySprite;
 			collider.enabled = false;

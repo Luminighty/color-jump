@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : PhysicsObject
 {
+	[SerializeField]
+	private GameObject colorHolder;
+
 	public float speed;
 	public float jumpFallMultiplier;
 	[SerializeField]
@@ -25,6 +28,8 @@ public class PlayerMovement : PhysicsObject
 
 	protected override void OnGroundTouched() {
 		jumpCount.Restart();
+		if(jumpBuffer.isDelayed() && CanJump())
+			DoJump();
 	}
 
 	void Jump() {
@@ -39,22 +44,32 @@ public class PlayerMovement : PhysicsObject
 			if(jumpCount == 0 && !fallBuffer.isDelayed())
 				jumpCount++;
 		}
-
+		jumpBuffer += Time.deltaTime;
+		if(Input.GetButtonDown("Jump"))
+			jumpBuffer.Reset();
+		
 		if(!Input.GetButtonDown("Jump") || !CanJump())
 			return;
+		DoJump();
+	}
+
+	void DoJump() {
 		grounded = false;
 		jumpCount++;
 		velocity.y = jumpSize;
 	}
 
 	private bool CanJump() {
-		return jumpCount.hasMore();
+		return jumpCount.hasMore() && !colorHolder.activeSelf;
 	}
 
 	void Move() {
-		float horizontal = Input.GetAxis("Horizontal");
+		float horizontal = (colorHolder.activeSelf) ? 0f : Input.GetAxis("Horizontal");
 		targetVelocity.x = horizontal * Time.deltaTime * speed;
+	}
 
+	public bool CanOpenMenu() {
+		return grounded;
 	}
 
 }

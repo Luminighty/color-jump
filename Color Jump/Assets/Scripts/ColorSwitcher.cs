@@ -13,7 +13,7 @@ public class ColorSwitcher : MonoBehaviour
 
 	[SerializeField]
 	private int _currentColor = 0;
-	public int CurrentColor {get { return pickedColors[_currentColor];}}
+	public int CurrentColor {get { return _pickedColors[_currentColor];}}
 
 	[SerializeField]
 	private Color[] _colors;
@@ -21,10 +21,14 @@ public class ColorSwitcher : MonoBehaviour
 
 	[SerializeField]
 	[Tooltip("The colors' index the player picked, these are the ones the game will loop through")]
-	private List<int> pickedColors = new List<int>();
+	private List<int> _pickedColors = new List<int>();
+	public  List<int> PickedColors {get { return _pickedColors;}}
 
 	[SerializeField]
-	private Delay delay = new Delay(2f);
+	private int _currentDelay = 0;
+	
+	[SerializeField]
+	private Delay[] delays;
 
 	private void Awake() {
 		SwitchColor(0);
@@ -32,11 +36,16 @@ public class ColorSwitcher : MonoBehaviour
 	}
 
 	private void Update() {
-		delay += Time.deltaTime;
-		if(!delay.isDelayed()) {
-			delay.Reset();
+		delays[_currentDelay] += Time.deltaTime;
+		if(!delays[_currentDelay].isDelayed()) {
+			delays[_currentDelay].Reset();
+			_currentDelay = (++_currentDelay) % delays.Length;
 			SwitchColor();
 		}
+	}
+
+	public void UpdateColor() {
+		SwitchColor(_currentColor);
 	}
 
 	private void SwitchColor(int color) {
@@ -46,12 +55,7 @@ public class ColorSwitcher : MonoBehaviour
 	}
 
 	private void SwitchColor() {
-		_currentColor = (++_currentColor) % pickedColors.Count;
+		_currentColor = (++_currentColor) % _pickedColors.Count;
 		SwitchColor(_currentColor);
 	}
-
-	public void SetDelay(float newDelay) {
-		delay = new Delay(newDelay);
-	}
-
 }
