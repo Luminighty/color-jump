@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1864019460714338266}
   - component: {fileID: 7833305732926183561}
   - component: {fileID: 6791874981835279235}
+  - component: {fileID: 509164298}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,8 +160,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.85}
-  m_EdgeRadius: 0.05
+  m_Size: {x: 0.9, y: 0.9}
+  m_EdgeRadius: 0
 --- !u!114 &6791874981835279235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,5 +182,31 @@ MonoBehaviour:
   fallBuffer:
     delay: 0.01
   jumpCount:
-    count: 1
+    count: 2
+  jumpBuffer:
+    delay: 0.1
   jumpSize: 20
+--- !u!114 &509164298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724987427089599399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee22ad7a52cdf546b7d381e7468a104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 3561275540544325753}
+  _currentColor: 0
+  _colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.09620416, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.946259, b: 1, a: 1}
+  - {r: 0.98732233, g: 1, b: 0, a: 1}
+  - {r: 0.5729389, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.07661381, b: 0, a: 1}
+  pickedColors: 010000000300000000000000
+  delay:
+    delay: 2
