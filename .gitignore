@@ -9,13 +9,13 @@ UnityGenerated/
 Library/
 Assets/AssetStoreTools*
 
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -69,3 +69,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 Color Jump/Temp/UnityLockfile
+Color Jump/Library/assetDatabase3
+Color Jump/Library/SceneVisibilityState.asset
+Color Jump/Library/assetDatabase3
+Color Jump/Library/SceneVisibilityState.asset
