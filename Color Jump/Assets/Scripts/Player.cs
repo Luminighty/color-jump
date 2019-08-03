@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+
 	private Vector3 respawnPoint;
 	private int deathCount = 0;
 
