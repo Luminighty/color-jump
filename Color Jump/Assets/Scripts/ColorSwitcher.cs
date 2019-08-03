@@ -32,6 +32,7 @@ public class ColorSwitcher : MonoBehaviour
 
 	private void Awake() {
 		SwitchColor(0);
+		delays[_currentDelay].Stop();
 		
 	}
 

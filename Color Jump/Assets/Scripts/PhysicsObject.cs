@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PhysicsObject : MonoBehaviour {
 
+	public static bool isPhysicsOn = true;
+
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
 	public float maxFallSpeed = -15f;
@@ -35,6 +37,8 @@ public class PhysicsObject : MonoBehaviour {
     
     void Update () 
     {
+		if(!isPhysicsOn)
+			return;
         targetVelocity = Vector2.zero;
         ComputeVelocity ();
     }
@@ -50,6 +54,8 @@ public class PhysicsObject : MonoBehaviour {
 
     void FixedUpdate()
     {
+		if(!isPhysicsOn)
+			return;
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;
 		
