@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6974944322451183366}
   - component: {fileID: 6974944322451183417}
   - component: {fileID: 6974944322451183416}
-  m_Layer: 0
-  m_Name: Spike
+  m_Layer: 9
+  m_Name: ColoredSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

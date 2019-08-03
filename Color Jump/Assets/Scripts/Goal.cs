@@ -8,6 +8,12 @@ public class Goal : MonoBehaviour
 	[SerializeField]
 	float winTime;
 
+	AudioSource audioSource;
+
+	private void Awake() {
+		audioSource = GetComponent<AudioSource>();
+	}
+
 	private void OnTriggerEnter2D(Collider2D other) {
 		if(other.tag == "Player") {
 			Debug.Log("Win");
@@ -16,9 +22,10 @@ public class Goal : MonoBehaviour
 	}
 
 	IEnumerator Win() {
+		audioSource.Play();
 		PhysicsObject.isPhysicsOn = false;
 		yield return new WaitForSeconds(winTime);
-		PhysicsObject.isPhysicsOn = false;
+		PhysicsObject.isPhysicsOn = true;
 	
 		SceneManager.LoadScene("MainMenu");
 	}

@@ -16,7 +16,7 @@ public class ColorSwitcher : MonoBehaviour
 	public int CurrentColor {get { return _pickedColors[_currentColor];}}
 
 	[SerializeField]
-	private Color[] _colors;
+	private Color[] _colors = new Color[] {Color.red};
 	public Color[] Colors {get { return _colors;}}
 
 	[SerializeField]
@@ -51,8 +51,8 @@ public class ColorSwitcher : MonoBehaviour
 
 	private void SwitchColor(int color) {
 		_currentColor = color;
-		onColorSwitch?.Invoke(CurrentColor);
 		renderer.color = Colors[CurrentColor];
+		onColorSwitch?.Invoke(CurrentColor);
 	}
 
 	private void SwitchColor() {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : PhysicsObject
 {
+	private Animator animator;
+	private Player player;
 	[SerializeField]
 	private GameObject colorHolder;
 
@@ -21,12 +23,26 @@ public class PlayerMovement : PhysicsObject
 
 	public float jumpSize = 10f;
 
+	private Delay walkParticleDelay = new Delay(0.2f);
+
+	private bool wasGrounded = false;
+
+	private void Awake() {
+		player = GetComponent<Player>();
+		animator = GetComponent<Animator>();
+	}
+
 	protected override void ComputeVelocity() {
-        Move();
+        if(!wasGrounded && grounded)
+			Instantiate(player.LandParticlePrefab, transform.position + (Vector3.down / 2f), Quaternion.identity);
+		
+		Move();
 		Jump();
+		wasGrounded = grounded;
 	}
 
 	protected override void OnGroundTouched() {
+		animator.SetBool("grounded", true);
 		jumpCount.Restart();
 		if(jumpBuffer.isDelayed() && CanJump())
 			DoJump();
@@ -41,8 +57,9 @@ public class PlayerMovement : PhysicsObject
 		// fall buffer
 		if(velocity.y < 0f) {
 			fallBuffer += Time.deltaTime;
-			if(jumpCount == 0 && !fallBuffer.isDelayed())
+			if(jumpCount == 0 && !fallBuffer.isDelayed()) {
 				jumpCount++;
+			}
 		}
 		jumpBuffer += Time.deltaTime;
 		if(Input.GetButtonDown("Jump"))
@@ -57,6 +74,9 @@ public class PlayerMovement : PhysicsObject
 		grounded = false;
 		jumpCount++;
 		velocity.y = jumpSize;
+		animator.SetBool("grounded", false);
+		animator.SetTrigger("jump");
+		player.soundEffectSource.PlayOneShot(player.jumpClip);
 	}
 
 	private bool CanJump() {
@@ -65,6 +85,12 @@ public class PlayerMovement : PhysicsObject
 
 	void Move() {
 		float horizontal = (colorHolder.activeSelf) ? 0f : Input.GetAxis("Horizontal");
+		animator.SetFloat("speed", Mathf.Abs(horizontal));
+		walkParticleDelay += Time.deltaTime;
+		if(horizontal != 0f && !walkParticleDelay.isDelayed() && grounded) {
+			Instantiate(player.WalkParticlePrefab, transform.position + (Vector3.down / 2f), Quaternion.identity);
+			walkParticleDelay.Reset();
+		}
 		targetVelocity.x = horizontal * Time.deltaTime * speed;
 	}
 
