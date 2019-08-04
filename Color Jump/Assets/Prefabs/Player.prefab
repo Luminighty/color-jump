@@ -210,11 +210,11 @@ MonoBehaviour:
   _currentColor: 0
   _colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.09620416, g: 1, b: 0, a: 1}
-  - {r: 0, g: 0.946259, b: 1, a: 1}
-  - {r: 0.98732233, g: 1, b: 0, a: 1}
-  - {r: 0.5729389, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0.07661381, b: 0, a: 1}
+  - {r: 0.57254905, g: 0.70980394, b: 0.78431374, a: 1}
+  - {r: 1, g: 0.7607844, b: 0.4901961, a: 1}
+  - {r: 0.9960785, g: 1, b: 0.6039216, a: 1}
+  - {r: 0.7490196, g: 0.909804, b: 0.59607846, a: 1}
+  - {r: 0.9450981, g: 0.6117647, b: 0.63529414, a: 1}
   _pickedColors: 000000000100000003000000
   _currentDelay: 0
   delays:
@@ -391,7 +391,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.456
   m_Pitch: 1
   Loop: 0
   Mute: 0

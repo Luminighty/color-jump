@@ -452,15 +452,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509164298, guid: 1297db1a1f24c47449fc63414051b3e5, type: 3}
       propertyPath: _pickedColors.Array.data[0]
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509164298, guid: 1297db1a1f24c47449fc63414051b3e5, type: 3}
       propertyPath: _pickedColors.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509164298, guid: 1297db1a1f24c47449fc63414051b3e5, type: 3}
       propertyPath: _pickedColors.Array.data[2]
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509164298, guid: 1297db1a1f24c47449fc63414051b3e5, type: 3}
       propertyPath: delays.Array.data[0].delay
@@ -538,6 +538,36 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpCount.count
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7428874178904031483, guid: 1297db1a1f24c47449fc63414051b3e5,
         type: 3}

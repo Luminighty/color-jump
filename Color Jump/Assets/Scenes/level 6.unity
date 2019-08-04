@@ -623,6 +623,36 @@ PrefabInstance:
       propertyPath: fallBuffer.delay
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580047981989037420, guid: 1297db1a1f24c47449fc63414051b3e5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1297db1a1f24c47449fc63414051b3e5, type: 3}
 --- !u!1001 &412610625
