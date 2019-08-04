@@ -35,7 +35,8 @@ public class PlayerMovement : PhysicsObject
 	protected override void ComputeVelocity() {
         if(!wasGrounded && grounded)
 			Instantiate(player.LandParticlePrefab, transform.position + (Vector3.down / 2f), Quaternion.identity);
-		
+		if(Input.GetButtonDown("Quit"))
+			UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 		Move();
 		Jump();
 		wasGrounded = grounded;

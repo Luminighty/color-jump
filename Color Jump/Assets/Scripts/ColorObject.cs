@@ -42,7 +42,7 @@ public class ColorObject : MonoBehaviour
 			renderer.sprite = fullSprite;
 			collider.enabled = true;
 			BoxCollider2D box = collider as BoxCollider2D;
-			Collider2D[] cols = Physics2D.OverlapBoxAll(transform.position, box.size, 0f);
+			Collider2D[] cols = Physics2D.OverlapBoxAll(transform.position, box.size * 0.98f, transform.eulerAngles.z);
 			foreach(Collider2D c in cols)
 				if(c.tag == "Player")
 					c.GetComponent<Player>().Respawn();

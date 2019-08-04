@@ -24,6 +24,7 @@ public class Goal : MonoBehaviour
 	IEnumerator Win() {
 		audioSource.Play();
 		PhysicsObject.isPhysicsOn = false;
+		GetComponentInChildren<SpriteRenderer>().enabled = false;
 		yield return new WaitForSeconds(winTime);
 		PhysicsObject.isPhysicsOn = true;
 	
